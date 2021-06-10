@@ -18,6 +18,10 @@ app.get('/', (req, res) => {
   res.render('home')
 })
 
+app.post('/new-user', (req, res) => {
+  res.send('new user created')
+})
+
 app.get('/recipes', (req, res) => {
   res.send('Hello, YOUR RECIPES!')
 })

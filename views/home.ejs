@@ -1,1 +1,65 @@
-<h1>Hello, World!</h1>
+<style>
+
+  .textarea-name{
+      resize: none;
+      border: 1px rgb(218, 218, 218) solid;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 6px;
+      font-size: 36px;
+      padding-left: 10px;
+    }
+  
+    .textarea-name::placeholder {
+    color: rgb(201, 201, 201);
+    font-style: italic;
+  }
+  
+    .textarea-ingredients{
+      resize: none;
+      border: 1px rgb(218, 218, 218) solid;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 6px;
+      font-size: 36px;
+      padding-left: 10px;
+      
+    }
+  
+    .textarea-ingredients::placeholder {
+    color: rgb(201, 201, 201);
+    font-style: italic;
+  }
+  </style>
+  <h2>Hello and welcome.</h2>
+<div>
+  <p>
+    Enter your name to create an account in which you can store your favorite
+    recipes.
+  </p>
+  <p>
+    <form method="POST" action="/new-user">
+        <input class="textarea-name" type="text" placeholder="Your Name" name="userName" />
+        <button type="submit">Create Your Account</button>
+    </form>     
+  </p>
+</div>
+
+<hr>
+<div>
+
+<h2>Let's Solve This!</h2>
+  <p>
+Or simply enter the ingredients that you have on-hand  
+  </p>
+  <p>
+    <form method="POST" action="/ingredients">
+      <textarea class="textarea-ingredients" rows="1"  type="text" placeholder="Enter, your, ingredients ..." name="ingredients"></textarea>
+      <button type="submit">Find a recipe!</button>
+  </form>    
+  </p>
+</div>
+<hr>
+<div>
+    <h2>Most popular recipes searched for this week:</h2>
+</div>
