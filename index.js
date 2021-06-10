@@ -18,8 +18,17 @@ app.get('/', (req, res) => {
   res.render('home')
 })
 
-app.post('/new-user', (req, res) => {
-  res.send('new user created')
+// API
+
+// GET / - main index of site
+app.get('/home2', (req, res) => {
+  let spoonURL =
+    'https://api.spoonacular.com/food/products/search?query=spaghetti&apiKey=db0e20d328214830b47c637ba471642f'
+  // Use request to call the API
+  axios.get(spoonURL).then((apiResponse) => {
+    let recipes = apiResponse.data.results
+    res.json(recipes)
+  })
 })
 
 app.get('/recipes', (req, res) => {
@@ -27,6 +36,5 @@ app.get('/recipes', (req, res) => {
 })
 
 app.listen(PORT, () => {
-  console.log(' 🎧 ...listening on', PORT)
-  // rowdyResults.print();
+  console.log(' 🎧 ...listening on PORT:', PORT)
 })
