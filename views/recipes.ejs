@@ -1,11 +1,22 @@
 
 
 
-<% recipes.forEach((rec) { %>
+<% recipes.forEach((rec) => { %>
 
-<div>
-<span class=""><%= recipes.strMeal %></span>
-<img style="width:150px;" src="<%= recipes.strMealThumb %>"/>
-</div>
+<ul class="recipes-list">
+    <li class="lead"><%= rec.strMeal %></li>
+    <li><img style="width:150px;" src="<%= rec.strMealThumb %>"/></li>
+    <li>idMeal: <%= rec.idMeal %></li>
+    <br>
+    <li><button>See Full Recipe</button><button>❤️ &nbsp;Save Recipe</button><button>❌ &nbsp;Delete Recipe</button></li>
+</ul>
+<hr>
 
 <% }); %>
+
+<span class="to-top"><a href="#top">Back to top</a></span>
+
+
+
+
+

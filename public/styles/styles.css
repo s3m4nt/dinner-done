@@ -70,3 +70,18 @@ img.marquee {
   /* border:1px solid black; */
   font-size: 16px;
 }
+
+.recipes-list{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.to-top{
+/* border: 1px solid black; */
+display: flex;
+text-align: right;
+padding-bottom: 150px;
+font-size: 16px;
+font-weight: bold;
+}
