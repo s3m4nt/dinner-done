@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express')
 const axios = require('axios')
 const ejsLayouts = require('express-ejs-layouts')
@@ -22,17 +24,19 @@ app.get('/', (req, res) => {
 
 // GET / - main index of site
 app.get('/home2', (req, res) => {
-  let spoonURL =
-    'https://api.spoonacular.com/food/products/search?query=spaghetti&apiKey=db0e20d328214830b47c637ba471642f'
+  let themealURL = `https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata`
   // Use request to call the API
-  axios.get(spoonURL).then((apiResponse) => {
-    let recipes = apiResponse.data.results
-    res.json(recipes)
+  axios.get(themealURL).then((apiResponse) => {
+    let recipes = apiResponse.data
+    // res.json(recipes)
+    // res.send(recipes)
+    // res.render()
+    console.log(recipes)
   })
 })
 
-app.get('/recipes', (req, res) => {
-  res.send('Hello, YOUR RECIPES!')
+app.get('/results', (req, res) => {
+  res.send('Hello, YOUR query results are here!')
 })
 
 app.listen(PORT, () => {
