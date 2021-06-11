@@ -21,23 +21,24 @@ app.get('/', (req, res) => {
 })
 
 // GET / - main index of site
-app.get('/home2', (req, res) => {
-  let themealURL = `www.themealdb.com/api/json/v1/1/filter.php?i=${req.body.ingredients}`
-  console.log('💀💀💀💀💀💀💀💀',req.body.ingredients)
+app.get('/recipes', (req, res) => {
+  let themealURL = `http://www.themealdb.com/api/json/v1/1/search.php?i=${req.query.ingredients}`
+  console.log('💀💀💀💀💀💀💀💀',req.query.ingredients)
+  console.log(themealURL);
   // Use request to call the API
   axios.get(themealURL)
     .then((apiResponse) => {
       let recipes = apiResponse.data.meals[0]
       // res.json(recipes)
-      res.render('home2', { recipes: recipes })
+      res.render('recipes', { recipes: recipes })
     })
     .catch((err) => {
       console.log('🔥🔥🔥🔥🔥🔥🔥🔥', err)
     })
 })
 
-app.get('/results', (req, res) => {
-  res.send('Hello, YOUR query results are here!')
+app.get('/saved', (req, res) => {
+  res.send('Here are your saved recipes')
 })
 
 app.listen(PORT, () => {

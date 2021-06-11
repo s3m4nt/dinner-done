@@ -18,7 +18,7 @@ h2.POPULAR {
 
 .textarea-name {
   resize: none;
-  border: 1px rgb(218, 218, 218) solid;
+  border: 1px rgb(173, 173, 173) solid;
   /* width: 100%; */
   overflow: hidden;
   border-radius: 6px;
@@ -35,7 +35,7 @@ h2.POPULAR {
 
 .textarea-ingredients {
   resize: none;
-  border: 1px rgb(218, 218, 218) solid;
+  border: 1px rgb(173, 173, 173) solid;
   width: 100%;
   overflow: hidden;
   border-radius: 6px;
@@ -64,4 +64,9 @@ img.marquee {
   /* max-width: 100%;
   height: auto; */
   border-radius: 12px;
+}
+
+.nav-top{
+  /* border:1px solid black; */
+  font-size: 16px;
 }
