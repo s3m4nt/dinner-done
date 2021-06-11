@@ -17,9 +17,9 @@ const createNewUsers = () => {
     //   console.log(user.get())
     // })
     .create({
-      name: 'James Carey',
-      email: 'toofunny-2323@gmail.com',
-      bio: 'Short desciption on my life ...',
+      name: 'Brian Young',
+      email: 'berkshirehunt@gmail.com',
+      bio: 'Bio entry here ...',
     })
     .then((user) => {
       console.log(user.get())

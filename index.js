@@ -35,11 +35,9 @@ app.get('/recipes', (req, res) => {
     .then((apiResponse) => {
       let recipes = apiResponse.data.meals
       // res.json(recipes)
-      if (recipes){
+
       res.render('recipes', { recipes: recipes })
-    }else{
-      res.send(`There are no recipes containing ${fixStr} :-(`)
-    }
+ 
     })
     .catch((err) => {
       console.log(err)
