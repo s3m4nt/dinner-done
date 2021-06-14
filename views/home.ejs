@@ -6,7 +6,16 @@
     
 <hr>
 
-
+<!-- ////////////////////////////// -->
+<h3 id="userTest"></h3>
+<script>
+    if (getUser){
+    document.getElementById("userTest").innerHTML = 'Hello, ' + getUser()
+    } else {
+        document.getElementById("userTest").innerHTML = 'Hello, Guest'
+    }
+</script>
+<!-- ////////////////////////////// -->
 <div>
   <h2 class="WELCOME">Hello and welcome</h2>
   <p>

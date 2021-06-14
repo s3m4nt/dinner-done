@@ -7,7 +7,14 @@ function login() {
 
 function getUser() {
     return window.localStorage.getItem("userName")
+    // window.localStorage.removeItem("userName");
 }
+
+function removeUser(){
+    return window.localStorage.removeItem("userName");
+}
+// removeUser()
+
 
 async function deleteRecipe(id){
     await fetch(`/deleteRecipe/${getUser()}/${id}`, {
