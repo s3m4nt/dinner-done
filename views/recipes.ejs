@@ -1,6 +1,6 @@
 
 <h3 id="userTest"></h3>
-<script>
+Hello, <script>
     document.getElementById("userTest").innerHTML = getUser()
 </script>
 
@@ -9,7 +9,7 @@
 <ul class="recipes-list">
     <li class="lead"><%= rec.strMeal %></li>
     <li><img style="width:150px;" src="<%= rec.strMealThumb %>"/></li>
-    <li>idMeal: <%= rec.idMeal %></li>
+    <!-- <li>idMeal: <%= rec.idMeal %></li> -->
     <br>
     <li><button>See Full Recipe</button><button onclick="saveRecipe(<%= rec.idMeal %>)">❤️ &nbsp;Save Recipe</button><button>❌ &nbsp;Delete Recipe</button></li>
 </ul>

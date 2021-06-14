@@ -7,8 +7,9 @@
     <div>
     <h2 class="WELCOME">Hello and welcome.</h2>
   </div>
+
 <div>
-  <p>
+  <p id="welcome">
     Enter your name to create an account in which you can save and ❤️  &nbsp;your favorite
     recipes.
   </p>
@@ -18,24 +19,19 @@
         <button type="submit">Create Your Account</button>
     </form>
 </p>
-<p>
-    <label for="users-pulldown">Or choose your account:</label>
 
-<select name="----" id="cars">
-  <option value="-----">----</option>
-  <option value="Brian">Brian</option>
-  <option value="foodLover12">foodLover12</option>
-  <option value="anthonyBourdain">anthonyBourdain</option>
-</select>
-  </p>
 </div>
-
+<script>
+  const welcomeTag = document.getElementById('welcome')
+  console.log(welcomeTag.innerHTML = 'this is a test, ')
+  // alert("Hello! I am an alert box!!");
+</script>
 <hr>
 <div>
 
 <h2 class="WELCOME">Let's Solve This!</h2>
   <p>
-Simply enter the ingredients that you have on-hand <i style="color: rgb(114, 2, 2);">(make sure to separate all ingredients by commas)</i>
+Simply enter the ingredients that you have on-hand <i class="reddish" ">(make sure to separate all ingredients by commas)</i>
   </p>
   <p>
     <form method="GET" action="/recipes">
@@ -45,6 +41,3 @@ Simply enter the ingredients that you have on-hand <i style="color: rgb(114, 2, 
   </p>
 </div>
 <hr>
-<!-- <div>
-  <h2 style="margin-bottom: 65px;" class="POPULAR"><a href="home2">Most popular recipes searched for this week</h2></a>
-</div> -->
