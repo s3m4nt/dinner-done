@@ -2,6 +2,7 @@ function login() {
     const userName = document.getElementById("userName").value
     console.log("SAVING USERNAME", userName)
     window.localStorage.setItem("userName", userName)
+    
 }
 
 function getUser() {
@@ -22,7 +23,8 @@ function saveRecipe(idMeal) {
     fetch(`/saveRecipe/${getUser()}/${idMeal}`, {
         method: 'POST'
     })
-    alert('Saved!')
+    // alert(`${getUser()}, you saved !`)
+    alert(`Saved!`)
 }
 
 async function updateRecipe(id, name){
