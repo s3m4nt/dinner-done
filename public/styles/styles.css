@@ -1,6 +1,5 @@
-/* //////////////////// */
+
 /* Additional Site Styles */
-/* //////////////////// */
 
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
@@ -20,7 +19,6 @@ h3#userTest {
 .textarea-name {
   resize: none;
   border: 1px rgb(173, 173, 173) solid;
-  /* width: 100%; */
   overflow: hidden;
   border-radius: 6px;
   font-size: 16px;
@@ -55,10 +53,6 @@ h3#userTest {
   font-size: 20px;
 }
 
-.find-recipes-button:active {
-  /* background-color: rgb(250, 133, 133); */
-}
-
 img.marquee {
   width: 100%;
   max-height: 500px;
@@ -68,7 +62,6 @@ img.marquee {
 }
 
 .nav-top{
-  /* border:1px solid black; */
   font-size: 16px;
 }
 
@@ -79,7 +72,6 @@ img.marquee {
 }
 
 .to-top{
-/* border: 1px solid black; */
 display: flex;
 text-align: right;
 padding-bottom: 150px;

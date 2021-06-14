@@ -37,3 +37,12 @@ async function updateRecipe(id, name){
     })
 window.location.reload();
 }
+
+
+function choosePic() {
+// window.onload = choosePic;
+let myPix = new Array("images/food1.jpg", "images/food2.jpg", "images/food3.jpg");
+var randomNum = Math.floor(Math.random() * myPix.length);
+document.querySelector(".marquee").src = myPix[randomNum];
+}
+
