@@ -12,6 +12,7 @@
       integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
       crossorigin="anonymous"
     />
+    <script src="../scripts/index.js"></script>
   </head>
   <body>
     <div class="container">
@@ -21,9 +22,12 @@
           Makes finding a recipe for items you have on-hand easy.
         </span>
         <hr />
-        <div class="nav-top"><a href="/">home</a> |  <a href="/saved">saved</a></div>
+        <div class="nav-top"><a href="/">home</a> |  <a id="savedLink" href="/saved">saved</a></div>
         <hr />
       </div>
+      <script>
+        document.getElementById("savedLink").href = `/saved/${getUser()}`;
+      </script>
       <%- body %>
     </div>
     <!-- jQuery -->

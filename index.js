@@ -59,9 +59,110 @@ const newUser = req.body.userName
   })
 })
 
-app.get('/saved', (req, res) => {
-  res.send('Here are your saved recipes')
+app.post('/updateRecipe/:userName/:id/:title', async (req,res) =>{
+  try{
+    const title = decodeURIComponent(req.params.title)
+await db.recipe.update({
+  title: title,
+}, {
+  where: {
+    id: req.params.id,
+  }
 })
+
+
+    res.sendStatus(200);
+  }
+  catch(err){
+    console.log(err);
+    res.sendStatus(400);
+  }
+})
+
+app.post('/deleteRecipe/:userName/:id', async (req,res) =>{
+  try{
+    await db.recipe.destroy({
+      where: {
+        id: req.params.id,
+      }
+    })
+    res.sendStatus(200);
+  }
+  catch(err){
+    console.log(err);
+    res.sendStatus(400);
+  }
+})
+
+app.post('/saveRecipe/:userName/:idMeal', async (req, res) => {
+  try {
+    const user = await db.user.findOne({
+      where: {
+        name: req.params.userName
+      }
+    })
+    if (!user) {
+      throw new Error("No user found!")
+    }
+
+    let themealURL = `http://www.themealdb.com/api/json/v2/${process.env.THEMEALDB_API_KEY}/lookup.php?i=${req.params.idMeal}`
+  // Use request to call the API
+  const apiResponse = await axios.get(themealURL)
+  const {
+    strMeal,
+    strMealThumb,
+    strYoutube,
+    strSource,
+  } = apiResponse.data.meals[0]
+
+    await db.recipe.create({
+      idMeal: req.params.idMeal,
+      userId: user.id,
+      title: strMeal,
+      image: strMealThumb,
+      video: strYoutube,
+      source: strSource,
+    })
+
+    res.sendStatus(200);
+  } catch (error) {
+    console.log(error)
+    res.sendStatus(400);
+  }
+  // .then((user) => {
+  //   res.redirect('/')
+  // })
+  // console.log(err)
+})
+  // console.log(req.params.userName, req.params.idMeal)
+  app.get('/saved/:userName', async (req, res) => {
+
+try{
+  const user = await db.user.findOne({
+    where: {
+      name: req.params.userName
+    }
+  })
+  if (!user) {
+    throw new Error("No user found!")
+  }
+
+const recipes = await db.recipe.findAll({
+  where: {
+    userId: user.id
+  }
+})
+
+res.render('saved', { recipes: recipes })
+
+}
+catch(err){
+  console.log(err);
+  res.sendStatus(400);
+}
+
+  })
+
 
 app.listen(PORT, () => {
   console.log(' 🎧 ...listening on PORT:', PORT)

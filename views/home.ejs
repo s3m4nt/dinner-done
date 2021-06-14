@@ -13,12 +13,12 @@
     recipes.
   </p>
   <p>
-    <form method="POST" action="/new-user">
-        <input class="textarea-name" type="text" placeholder="Create Your Username" name="userName" />
+    <form method="POST" action="/new-user" onsubmit="login()">
+        <input id="userName" class="textarea-name" type="text" placeholder="Create Your Username" name="userName" />
         <button type="submit">Create Your Account</button>
     </form>
 </p>
-<!-- <p>
+<p>
     <label for="users-pulldown">Or choose your account:</label>
 
 <select name="----" id="cars">
@@ -27,7 +27,7 @@
   <option value="foodLover12">foodLover12</option>
   <option value="anthonyBourdain">anthonyBourdain</option>
 </select>
-  </p> -->
+  </p>
 </div>
 
 <hr>

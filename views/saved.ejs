@@ -1,1 +1,20 @@
 
+<h3 id="userTest"></h3>
+<script>
+    document.getElementById("userTest").innerHTML = getUser()
+</script>
+
+<% recipes.forEach((rec) => { %>
+
+    <ul class="recipes-list">
+        <li class="lead"><%= rec.title %> -- <button onclick="updateRecipe(<%= rec.id %>, '<%=rec.title%>')">update recipe name</button></li>
+        <li><img style="width:150px;" src="<%= rec.image %>"/></li>
+        <li>idMeal: <%= rec.idMeal %></li>
+        <br>
+        <li><a href="<%= rec.video %>" target="_blank">Video Link</a></li>
+        <li><a href="<%= rec.source %>" target="_blank">Website Link</a></li>
+        <li><button onclick="deleteRecipe(<%= rec.id %>)">❌ &nbsp;Delete Recipe</button></li>
+    </ul>
+    <hr>
+    
+    <% }); %>

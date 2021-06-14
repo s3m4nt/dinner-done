@@ -1,5 +1,8 @@
 
-
+<h3 id="userTest"></h3>
+<script>
+    document.getElementById("userTest").innerHTML = getUser()
+</script>
 
 <% recipes.forEach((rec) => { %>
 
@@ -8,7 +11,7 @@
     <li><img style="width:150px;" src="<%= rec.strMealThumb %>"/></li>
     <li>idMeal: <%= rec.idMeal %></li>
     <br>
-    <li><button>See Full Recipe</button><button>❤️ &nbsp;Save Recipe</button><button>❌ &nbsp;Delete Recipe</button></li>
+    <li><button>See Full Recipe</button><button onclick="saveRecipe(<%= rec.idMeal %>)">❤️ &nbsp;Save Recipe</button><button>❌ &nbsp;Delete Recipe</button></li>
 </ul>
 <hr>
 
