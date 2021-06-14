@@ -7,16 +7,8 @@ function login() {
 
 function getUser() {
     return window.localStorage.getItem("userName")
-    // window.localStorage.removeItem("userName");
 }
 
-// For testing purposes
-function removeUser(){
-    return window.localStorage.removeItem("userName");
-}
-// removeUser()
-
-// Delete recipe at user id
 async function deleteRecipe(id){
     await fetch(`/deleteRecipe/${getUser()}/${id}`, {
         method: 'POST'
@@ -25,7 +17,6 @@ async function deleteRecipe(id){
     window.location.reload();
 }
 
-// save button
 function saveRecipe(idMeal) {
     console.log("Save meal with ID:", idMeal, "for user", getUser())
 
@@ -36,7 +27,6 @@ function saveRecipe(idMeal) {
     alert(`Saved!`)
 }
 
-// Update (use prompt?)
 async function updateRecipe(id, name){
     const updateTitle = window.prompt("Rename this recipe", name)
     if (!updateTitle){
@@ -48,7 +38,7 @@ async function updateRecipe(id, name){
 window.location.reload();
 }
 
-// Jome page dynamic image rotator
+
 function choosePic() {
 // window.onload = choosePic;
 let myPix = new Array("images/food1.jpg", "images/food2.jpg", "images/food3.jpg");
