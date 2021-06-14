@@ -19,7 +19,7 @@ app.use(methodOverride('_method'))
 
 // GET / - main index of site
 app.get('/', (req, res) => {
-  // / route gets layout.ejs from views
+  // root route gets layout.ejs from views
   res.render('home')
 })
 
