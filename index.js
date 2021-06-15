@@ -8,6 +8,7 @@ const ejsLayouts = require('express-ejs-layouts')
 const methodOverride = require('method-override')
 const app = express()
 const PORT = process.env.PORT || 3000
+// const server  = app.listen(PORT);
 
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
@@ -35,14 +36,19 @@ app.get('/recipes', (req, res) => {
     .then((apiResponse) => {
       let recipes = apiResponse.data.meals
       // res.json(recipes)
-// if (recipes === null) {
-//   console.log('😡😡😡😡😡 NULL returned');
-//   document.querySelector('.WELCOME2').innerHTML = "Nothing returned, try again"
-//   // alert('recipes are NULL')
-//   //  res.redirect(`https://search.yahoo.com/search?p=${fixStr}+recipes&fr=yfp-t&ei=UTF-8&fp=1`);
-// }
+if (recipes === null) {
+  console.log('😡😡😡😡😡 NULL returned');
+
+let noRecipe = true
+
+// Pass variable to front end
+res.render('home', { noRecipe : noRecipe });
+
+
+  //  res.redirect(`https://search.yahoo.com/search?p=${fixStr}+recipes&fr=yfp-t&ei=UTF-8&fp=1`);
+} else {
       res.render('recipes', { recipes: recipes })
- 
+    }
     })
     .catch((err) => {
       console.log(err)

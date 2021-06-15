@@ -28,9 +28,18 @@
 <hr>
 <div>
 
-<h2 class="WELCOME2">Let's Solve This!</h2>
+
+  <% if (noRecipe === true){ %>
+      <h2 class="WELCOME2">Your query returned no results – try again </h2>
+  <% } else { %>  
+        <h2 class="WELCOME2">Let's Solve This!</h2>
+  <% } %>
+
+
+
+
   <p>
-Simply enter the ingredients that you have on-hand <i class="reddish" ">(make sure to separate all ingredients by commas)</i>
+Simply enter the ingredients that you have on-hand <i class="reddish">(make sure to separate all ingredients by commas)</i>
   </p>
   <p>
     <form method="GET" action="/recipes">
