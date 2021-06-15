@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
   res.render('home')
 })
 
-// GET / - main index of site
+///
 app.get('/recipes', (req, res) => {
 
   // repair syntax at query strings
@@ -35,12 +35,12 @@ app.get('/recipes', (req, res) => {
     .then((apiResponse) => {
       let recipes = apiResponse.data.meals
       // res.json(recipes)
-if (recipes === null) {
-  console.log('😡😡😡😡😡 NULL returned');
-  document.querySelector('.WELCOME2').innerHTML = "Nothing returned, try again"
-  alert('recipes are NULL')
-  // res.redirect(`https://search.yahoo.com/search?p=${fixStr}+recipes&fr=yfp-t&ei=UTF-8&fp=1`);
-}
+// if (recipes === null) {
+//   console.log('😡😡😡😡😡 NULL returned');
+//   document.querySelector('.WELCOME2').innerHTML = "Nothing returned, try again"
+//   // alert('recipes are NULL')
+//   //  res.redirect(`https://search.yahoo.com/search?p=${fixStr}+recipes&fr=yfp-t&ei=UTF-8&fp=1`);
+// }
       res.render('recipes', { recipes: recipes })
  
     })
