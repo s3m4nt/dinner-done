@@ -24,10 +24,8 @@ app.get('/', (req, res) => {
   res.render('home')
 })
 
-///
 app.get('/recipes', (req, res) => {
-
-  // repair syntax at query strings
+  // repair odd syntax at query strings
   const fixStr = req.query.ingredients
   const fixStr2 = fixStr.split(',').map(x => x.trim()).map(y => y.replace(/\s/g, '_')).join(',')
   let themealURL = `http://www.themealdb.com/api/json/v2/${process.env.THEMEALDB_API_KEY}/filter.php?i=${fixStr2}`
@@ -37,15 +35,12 @@ app.get('/recipes', (req, res) => {
       let recipes = apiResponse.data.meals
       // res.json(recipes)
 if (recipes === null) {
-  console.log('😡😡😡😡😡 NULL returned');
 
-let noRecipe = true
+    let noRecipe = true
 
 // Pass variable to front end
-res.render('home', { noRecipe : noRecipe });
+    res.render('next');
 
-
-  //  res.redirect(`https://search.yahoo.com/search?p=${fixStr}+recipes&fr=yfp-t&ei=UTF-8&fp=1`);
 } else {
       res.render('recipes', { recipes: recipes })
     }
