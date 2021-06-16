@@ -19,7 +19,7 @@ This application employs the following technologies:
 <li>Bootstrap</li> 
 </ul>
 <hr>
-<b>Dinner. Done.</b> is an app that fulfills the lifelong question of, "What can I possibly make out of <i>this</i>?" 
+<b>Dinner. Done.</b> is a MVC application that fulfills the lifelong question of, "What can I possibly make out of <i>this</i>?" 
 <br><br>
 By simply entering your random-kitchen-found-items, you can peruse thousands of recipes, of all cuisine types, that match your ingredients. 
 <br><br>
